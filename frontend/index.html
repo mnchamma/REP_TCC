@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login e Cadastro - TCC API</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>TCC - API com Autenticação</h1>
+
+    <div class="card">
+      <h2>Cadastrar</h2>
+      <input type="text" id="registerUsername" placeholder="Usuário" />
+      <input type="password" id="registerPassword" placeholder="Senha" />
+      <button onclick="registerUser()">Cadastrar</button>
+    </div>
+
+    <div class="card">
+      <h2>Entrar</h2>
+      <input type="text" id="loginUsername" placeholder="Usuário" />
+      <input type="password" id="loginPassword" placeholder="Senha" />
+      <button onclick="loginUser()">Entrar</button>
+    </div>
+
+    <div class="card">
+        <h2>Previsão do valor do imóvel</h2>
+
+        <label>Versão do modelo</label>
+        <select id="modelVersion">
+            <option value="v1">v1 - LinearRegression</option>
+            <option value="v2">v2 - RandomForestRegressor</option>
+        </select>
+
+        <input type="number" id="MedInc" placeholder="MedInc" step="any" />
+        <input type="number" id="HouseAge" placeholder="HouseAge" step="any" />
+        <input type="number" id="AveRooms" placeholder="AveRooms" step="any" />
+        <input type="number" id="AveBedrms" placeholder="AveBedrms" step="any" />
+        <input type="number" id="Population" placeholder="Population" step="any" />
+        <input type="number" id="AveOccup" placeholder="AveOccup" step="any" />
+        <input type="number" id="Latitude" placeholder="Latitude" step="any" />
+        <input type="number" id="Longitude" placeholder="Longitude" step="any" />
+
+        <button onclick="callPredict()">Prever valor</button>
+        <button onclick="fillExampleData()">Preencher exemplo</button>
+        <button onclick="logoutUser()">Sair</button>
+    </div>
+
+    <div class="card">
+      <h2>Mensagens</h2>
+      <pre id="messageBox">Aguardando ações...</pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

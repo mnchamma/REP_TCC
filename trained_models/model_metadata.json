@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-06-03T16:06:57.686508",
+  "target": "MedHouseVal",
+  "feature_names": [
+    "MedInc",
+    "HouseAge",
+    "AveRooms",
+    "AveBedrms",
+    "Population",
+    "AveOccup",
+    "Latitude",
+    "Longitude"
+  ],
+  "models": {
+    "v1": {
+      "name": "LinearRegression",
+      "path": "C:\\MM\\MBA_ENGSOFT\\TCC\\tcc-api\\trained_models\\california_model_v1.joblib",
+      "metrics": {
+        "mae": 0.5332,
+        "mse": 0.555892,
+        "rmse": 0.745581,
+        "r2": 0.575788
+      }
+    },
+    "v2": {
+      "name": "RandomForestRegressor",
+      "path": "C:\\MM\\MBA_ENGSOFT\\TCC\\tcc-api\\trained_models\\california_model_v2.joblib",
+      "metrics": {
+        "mae": 0.366289,
+        "mse": 0.296493,
+        "rmse": 0.544512,
+        "r2": 0.77374
+      }
+    }
+  }
+}
