@@ -31,4 +31,14 @@ Verificação posterior no Atlas: `Cluster0` estava automaticamente pausado por 
 - Endpoint autenticado de proveniência de modelos e hash/commit nas novas predições persistidas.
 - Harness Locust separado, mantendo o original local para análise histórica.
 
-Ainda não há evidência de deploy revisado concluído nem resultados de carga em nuvem nesta preparação. Os testes locais da coleta usam um servidor simulado apenas para validar os arquivos produzidos.
+## Recuperação concluída em 22/09/2026
+
+- PostgreSQL criado com autorização: `tcc-postgres-retest`, ID `dpg-dap6pregekts7380d14g-a`, PostgreSQL 18, plano gratuito, Oregon, expiração informada em 22/10/2026.
+- POSTGRES_URL atualizado no Render para conexão interna do novo banco. O arquivo `.env` antigo local não foi alterado; suas credenciais PostgreSQL não representam mais o banco atual.
+- Commit revisado `81d6fb252cbd1b64af485007896dee366c3977c1` publicado e deploy `dep-dap7phe7bikc73bh90rg` confirmado Live.
+- O Atlas continha somente um IP antigo na lista de acesso. As faixas informadas pelo painel do Render, `74.220.48.0/24` e `74.220.56.0/24`, foram adicionadas com autorização explícita. As faixas são compartilhadas por serviços Render da região; autenticação e TLS permanecem exigidos.
+- Antes da liberação de rede, predições retornavam HTTP 500 após aproximadamente 30 segundos, com `ServerSelectionTimeoutError` e falha de handshake TLS. Após a liberação, login e predições V1/V2 retornaram HTTP 200. Evidências: `load_tests/results/preflight-before-network-fix.json` e `preflight.json`.
+- Usuário de carga criado. Credenciais ficam somente em `.env.loadtest`, ignorado pelo Git e pelo Docker.
+- Evidência MLOps em `load_tests/results/mlops`: hashes dos artefatos do commit original iguais aos atuais e aos retornados pela API; ambas as rotas respondem com seus respectivos modelos.
+
+Os tempos de preflight não são resultados de desempenho. O piloto e a bateria Locust produzem diretórios próprios. Os testes locais com servidor simulado validam somente o instrumento de coleta.
