@@ -3,4 +3,7 @@ venv/
 .venv311/
 __pycache__/
 .env
+.env.*
 *.pyc
+.pytest_cache/
+load_tests/results/

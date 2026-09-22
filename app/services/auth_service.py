@@ -33,11 +33,6 @@ def create_access_token(data: dict):
 
     token = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
-    print("TOKEN GERADO:", token)
-    print("PAYLOAD GERADO:", to_encode)
-    print("SECRET_KEY USADA NA GERAÇÃO:", SECRET_KEY)
-    print("ALGORITHM USADO NA GERAÇÃO:", ALGORITHM)
-
     return token
 
 def create_user(username, password):

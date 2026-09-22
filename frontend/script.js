@@ -1,4 +1,4 @@
-const API_BASE = "http://127.0.0.1:8000/api/v1";
+const API_BASE = "/api/v1";
 
 function showMessage(message) {
   document.getElementById("messageBox").textContent =
@@ -101,7 +101,7 @@ async function callPredict() {
   }
 
   try {
-    const response = await fetch(`http://127.0.0.1:8000/api/${modelVersion}/predict`, {
+    const response = await fetch(`/api/${modelVersion}/predict`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
